@@ -1,0 +1,67 @@
+/* In your-component.css or styles.css */
+.button-container {
+    display: flex;
+    flex-direction: column; /* To stack buttons vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    height: 100vh; /* Adjust the height as needed for your layout */
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #ff0055; /* Change the background color as needed */
+    color: #fff; /* Change the text color as needed */
+    border: none;
+    border-radius: 5px;
+    margin: 5px; /* Add margin to space out the buttons */
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    background-color: #ccc; /* Change the disabled button color */
+    cursor: not-allowed;
+  }
+  
+  /* In your-component.css */
+.container {
+  max-width: 400px; /* Adjust the maximum width as needed */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  text-align: center; /* Center the content horizontally within the container */
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+  width: 100%;
+  
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff; /* Change the background color as needed */
+  color: #fff; /* Change the text color as needed */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3; /* Change the hover color as needed */
+}
+
+
+  
+  

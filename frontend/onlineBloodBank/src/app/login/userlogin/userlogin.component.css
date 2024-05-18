@@ -1,0 +1,110 @@
+/* CSS Only */
+body {
+
+    background-color: #f2f2f2; /* Light gray background color */
+    font-family: Arial, sans-serif; /* Choose your desired font-family */
+    margin: 0  auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+.login-container {
+  
+    max-width: 400px;
+    background-color: #fff; /* White background for the form container */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+.form-group {
+   
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+   
+    width: 25%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+   
+    width: 15%;
+    padding: 10px;
+    background-color: #ff0015; /* Blue button color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff0015; /* Darker blue on hover */
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    width: 40%;
+    height: 40%;
+    background-color: #f9f9f9;
+}
+
+.container h1 {
+    margin-top: 0;
+}
+
+.container label, .container input {
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto ;
+    margin-bottom: 10px;
+   
+}
+
+.container button {
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    padding: auto;
+    text-align: justify;
+    background-color: #e31b1b;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container button:hover {
+    background-color: #0056b3;
+}
+
+.error-messages{
+    color: red;
+  }

@@ -1,0 +1,32 @@
+<div class="title">
+    E-RAKTKOSH
+</div>
+
+<div *ngIf="dashboard==0" class="navbar">
+    <img src="assets\Images\bloodbanklogo.jpeg" alt="bloodbanklogo" class="logo">
+    
+    <nav class="nav-buttons">
+        <button (click)="show(1)" [disabled]="whatToShow==1">LOGIN</button>
+        <button (click)="show(2)" [disabled]="whatToShow==2">REGISTER</button>
+       
+        <!-- <button (click)="show(4)" [disabled]="whatToShow==4">LABORATORY</button> -->
+        <button (click)="show(0)" [disabled]="whatToShow==0">ABOUT US</button>
+
+    </nav>
+</div>
+<div *ngIf="dashboard==0">
+<app-userlogin *ngIf="whatToShow==1"></app-userlogin>
+<app-userregistration *ngIf="whatToShow==2"></app-userregistration>
+<app-about *ngIf="whatToShow==0"></app-about>
+</div>
+
+
+<app-userdashboard *ngIf="dashboard==1"></app-userdashboard>
+<app-admindashboard *ngIf="dashboard==2"></app-admindashboard>
+<app-rootdashboard *ngIf="dashboard==3"></app-rootdashboard>
+<app-footter></app-footter>
+
+
+
+
+<!-- Copyright <b>©</b>-2023 Purushottam korde. All rights reserved. -->

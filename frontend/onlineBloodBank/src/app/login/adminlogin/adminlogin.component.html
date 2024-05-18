@@ -1,0 +1,82 @@
+<!-- <div>
+    <button (click)="show(1)" [disabled]="showloginorregister==1">bankLogin</button>
+    <button (click)="show(2)" [disabled]="showloginorregister==2">Register Blood Bank</button>
+    
+</div>
+<div class="container" *ngIf="showloginorregister==1">
+    <h1>Blood Bank Login</h1>
+    UserName <br>
+    <input type="text" placeholder="enter Username" [(ngModel)]="adminusername"> <br>
+    Password <br>
+    <input type="password" placeholder="enter password" [(ngModel)]="adminpassword"> <br>
+    <br>
+    <button (click)="adminlogin()">login</button> <br> <br>
+
+    username : root <br>
+    password : root
+
+</div>
+<div class="container register" *ngIf="showloginorregister==5">
+    <h1>Register Blood Bank</h1> <br>
+    Blood bank name : <br>
+    <input type="text" [(ngModel)]="registeradmin.bname"> <br>
+    username <br>
+    <input type="text" [(ngModel)]="registeradmin.busername"> <br>
+    password <br>
+    <input type="text" [(ngModel)]="registeradmin.bpassword"> <br>
+    Mobile Number <br>
+    <input type="text" [(ngModel)]="registeradmin.bmobilenumber"> <br>
+    email id <br>
+    <input type="text" [(ngModel)]="registeradmin.bemail"> <br>
+    Address <br>
+    <textarea placeholder="enter address" [(ngModel)]="registeradmin.baddress">
+</textarea> <br>
+    City <br>
+    <input type="text" [(ngModel)]="registeradmin.bcity"> <br>
+    <button (click)="regitseradmin()">register</button>
+</div> -->
+<div class="container register">
+    <form action="" [formGroup]="registerBloodBankForm" (ngSubmit)="registerBank()" class="mt-4">
+        <div class="mb-4">
+            <h2 class="text-center">Register Bank</h2>
+        </div>
+        <div class="mb-3">
+            <label for="bloodBankName" class="form-label">Blood bank name</label>
+            <input type="text" formControlName="fullname" class="form-control">
+            <span class="text-danger" *ngIf="registerBloodBankForm.get('fullname')?.invalid && registerBloodBankForm.get('fullname')?.touched">This field is invalid</span>
+        </div>
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" formControlName="username" class="form-control">
+            <span class="text-danger" *ngIf="registerBloodBankForm.get('username')?.invalid && registerBloodBankForm.get('username')?.touched">This field is invalid</span>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" formControlName="password" class="form-control">
+            <span class="text-danger" *ngIf="registerBloodBankForm.get('password')?.invalid && registerBloodBankForm.get('password')?.touched">This field is invalid</span>
+        </div>
+        <div class="mb-3">
+            <label for="mobileNumber" class="form-label">Mobile Number</label>
+            <input type="tel" formControlName="mobilenumber" class="form-control">
+            <span class="text-danger" *ngIf="registerBloodBankForm.get('mobilenumber')?.invalid && registerBloodBankForm.get('mobilenumber')?.touched">This field is invalid</span>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email ID</label>
+            <input type="email" formControlName="emailId" class="form-control">
+            <span class="text-danger" *ngIf="registerBloodBankForm.get('emailId')?.invalid && registerBloodBankForm.get('emailId')?.touched">This field is invalid</span>
+        </div>
+        <div class="mb-3">
+            <label for="address" class="form-label">Address</label>
+            <input type="text" formControlName="address" class="form-control">
+            <span class="text-danger" *ngIf="registerBloodBankForm.get('address')?.invalid && registerBloodBankForm.get('address')?.touched">This field is invalid</span>
+        </div>
+        <div class="mb-3">
+            <label for="city" class="form-label">City</label>
+            <input type="text" formControlName="city" class="form-control">
+            <span class="text-danger" *ngIf="registerBloodBankForm.get('city')?.invalid && registerBloodBankForm.get('city')?.touched">This field is invalid</span>
+        </div>
+        <div class="mb-4">
+            <button [disabled]="registerBloodBankForm.invalid" class="btn btn-primary">Register</button>
+        </div>
+    </form>
+</div>

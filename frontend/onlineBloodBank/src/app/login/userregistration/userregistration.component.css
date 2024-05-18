@@ -1,0 +1,159 @@
+/* 
+h2 {
+    color: #333;
+}
+
+form {
+    width: 300px;
+    
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+label, input, select {
+    display: block;
+    margin-bottom: 10px;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+    width: 25%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto ;
+    margin-bottom: 10px;
+}
+
+input[type="date"] {
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto ;
+    margin-bottom: 10px;
+    width: 25%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+select {
+    width: 26%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: white;
+}
+
+button {
+    
+    width: 15%;
+    padding: 10px 20px;
+    background-color: #ff0015;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff0015;
+}
+
+.container{
+    width: 50%;
+    height: 50%;
+    
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto ;
+    
+    border-collapse: collapse;
+    border-style: groove;
+    text-align: center;
+    border-radius: 20px;
+
+    font-weight: 100;
+    background-color: #f9f9f9;
+} */
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  form {
+    display: grid;
+    gap: 10px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  .error-messages {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #d9534f; /* Red color, you can adjust this */
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    form {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f8d7da; /* Red background color, you can adjust this */
+    padding: 20px;
+    border: 1px solid #f5c6cb; /* Red border color, you can adjust this */
+    border-radius: 5px;
+    z-index: 1000;
+  }
+  
+  .popup-content {
+    text-align: center;
+  }
+  
+  .close-popup {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+  }
+  

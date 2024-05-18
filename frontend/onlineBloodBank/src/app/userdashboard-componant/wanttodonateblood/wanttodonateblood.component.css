@@ -1,0 +1,124 @@
+/* General styling for buttons */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+/* Style for the "Book Appointment" button */
+button.book-appointment {
+  background-color: #d9534f; /* Red color for danger/alert */
+  color: #fff; /* White text color */
+}
+
+/* Style for the "Check Appointment Status" button */
+button.check-status {
+  background-color: #d9534f; /* Blue color for info */
+  color: #fff; /* White text color */
+}
+
+/* Hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+  background-color: #FF5252;
+}
+
+/* Add more specific styles or adjust colors based on your blood donation site theme */
+
+
+/* blood-donation.component.css */
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    color: #d9534f;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #d9534f;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #c9302c;
+  }
+  
+  /* Responsive Styles */
+  @media only screen and (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+  
+    input,
+    select,
+    textarea {
+      margin-bottom: 10px;
+    }
+  
+    button {
+      font-size: 14px;
+    }
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  .cancel-button {
+    background-color: #ff6347;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+  }

@@ -1,0 +1,132 @@
+.form-container {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+  }
+  .form-sides-container{
+    display: flex;
+  }
+  .form-wrapper{
+    flex: 1;
+  }
+  
+  /* .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  } */
+
+  /* donation-form.component.css */
+
+.form-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-sides-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.leftside,
+.rightside {
+  width: 48%;
+}
+
+.form-group {
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+@media screen and (max-width: 600px) {
+  .form-sides-container {
+    flex-direction: column;
+  }
+
+  .leftside,
+  .rightside {
+    width: 100%;
+  }
+}
+/* donation-form.component.css */
+
+.form-group {
+  margin-left: 10px;
+  margin-bottom: 20px;
+  text-align: center; /* Center align the button */
+}
+
+button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block; /* Ensure inline-block display to center using text-align */
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+
+  
+

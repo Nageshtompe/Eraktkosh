@@ -1,0 +1,67 @@
+    /* Style for the navigation bar buttons */
+    .navbar button {
+        background-color: #4CAF50; /* Background color for buttons */
+        border: none; /* Remove button border */
+        border-radius: 25px;
+        color: white; /* Text color */
+        padding: 10px 20px; /* Padding for spacing */
+        margin: 5px; /* Margin for spacing between buttons */
+        cursor: pointer; /* Display pointer cursor on hover */
+        font-size: 16px; /* Font size */
+    }
+
+    /* Style for button hover effect */
+    .navbar button:hover {
+        background-color: #45a049; /* Darker background color on hover */
+    }
+    table {
+        border-collapse: collapse;
+        width: 80%;
+        margin: 20px auto; /* Center the table */
+    }
+
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    /* In your-component.css or styles.css */
+.header {
+    background-color: #d9534f; /* Red background for the header */
+    color: #fff; /* White text color */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header h1 {
+    font-size: 24px;
+  }
+  
+  .navbar {
+    background-color: #d9534f; /* Red background for the navbar */
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar button {
+    background-color: #d9534f; /* Red background for buttons */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  
+  .navbar button:hover {
+    background-color: #c9302c; /* Darker red on hover */
+  }
+  

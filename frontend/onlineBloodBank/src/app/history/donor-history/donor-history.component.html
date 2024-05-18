@@ -1,0 +1,28 @@
+<div class="btn_box">
+    <button (click)="getHistory()" [disabled]="show==1">donoting History</button>
+</div>
+
+<!-- your-component.component.html -->
+<div *ngIf="show==1" >
+    <table>
+      <thead>
+        <tr>
+            <th>sr.no</th>
+          <th>Name</th>
+          <th>Date of Donation</th>
+          <th>Weight</th>
+          <th>Blood Group</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of bloodHistory;let i=index">
+            <td>{{i+1}}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.dateOfDonoting | date }}</td>
+          <td>{{ item.weight }}</td>
+          <td>{{ item.bloodGroup }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

@@ -1,0 +1,48 @@
+<button (mouseover)="onMouseOver($event,1)" (click)="getAllRequestOfBlood(1)" [disabled]="shows==1">Pending({{countOfPending}})</button>
+<button (mouseover)="onMouseOver($event,2)" (click)="getAllRequestOfBlood(2)" [disabled]="shows==2">Accepted({{countOfAccepted}})</button>
+<button (mouseover)="onMouseOver($event,3)" (click)="getAllRequestOfBlood(3)" [disabled]="shows==3">Rejected({{countOfRejected}})</button>
+
+
+<div>
+    
+<h3>request for blood</h3>
+<br> <br>
+<table border=" 1px solid black">
+    <tr>
+        <th>SN</th>
+        <th>Patient Name</th>
+        <th>Patient Age</th>
+        <th>Patient Gender</th>
+        <th>Hospital Name</th>
+        <th>Hospital Contact Number</th>
+        <th>Required Blood Type</th>
+        <th>Needed Date</th>
+        <th>Emergency Status</th>
+        <th>Patient Contact Number</th>
+        <th>Date Of Request</th>
+     
+       
+        <th *ngIf="shows==1">Action</th>
+    </tr>
+    <tr *ngFor="let req of bloodRequest;let i=index">
+
+        <td>{{i+1}}</td>
+        <td>{{req.patientName}}</td>
+        <td>{{req.patientAge}}</td>
+        <td>{{req.patientGender}}</td>
+        <td>{{req.hospitalName}}</td>
+        <td>{{req.hospitalContactNumber}}</td>
+        <td>{{req.bloodType}}</td>
+        <td>{{req.neededDate| date}}</td>
+        <td>{{req.emergencyStatus}}</td>
+        <td>{{req.patientContactNumber}}</td>
+        <td>{{req.dateOfRequest| date}}</td>
+       
+       
+        <td *ngIf="shows==1">
+            <button (click)="acceptedBloodRequest(req,2)">Accept</button>
+            <button (click)="acceptedBloodRequest(req,3)">Reject</button>
+        </td>
+    </tr>
+</table>
+</div>

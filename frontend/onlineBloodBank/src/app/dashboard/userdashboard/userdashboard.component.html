@@ -1,0 +1,60 @@
+<div class="header">
+    <h1>Welcome {{ service.getUserData().fullname}} </h1>
+</div>
+
+<div class="navbar">
+    <button (click)="show(1)" [disabled]="selectedNavbar==1">profile</button>
+<button (click)="show(3)">want to donate blood</button>
+<button (click)="show(2)">looking for blood</button>
+<button (click)="show(4)">blood donating history</button>
+<button (click)="logout()">Logout</button>
+</div>
+
+<!-- <div *ngIf="selectedNavbar==1">
+    fullname : {{service.getUserData().fullname}}<br>
+    bloodgroup: {{service.getUserData().bloodgroup}}<br>
+    mobilenumber: {{service.getUserData().mobilenumber}}<br>
+    dob: {{service.getUserData().dob}}<br>
+    gender: {{service.getUserData().gender}}<br>
+    address: {{service.getUserData().address}}<br></div> -->
+
+
+    <div *ngIf="selectedNavbar==1">
+        <table> 
+       
+            <tr>
+                <td>Full Name</td>
+                <td>{{ service.getUserData().fullname }}</td>
+            </tr>
+            <!-- <tr>
+                <td>Blood Group</td>
+                <td>{{ service.getUserData().bloodgroup }}</td>
+            </tr> -->
+            <tr>
+                <td>Mobile Number</td>
+                <td>{{ service.getUserData().mobilenumber }}</td>
+            </tr>
+            <tr>
+                <td>Date of Birth</td>
+                <td>{{ service.getUserData().dob | date }}</td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>{{ service.getUserData().gender }}</td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>{{ service.getUserData().address }}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div *ngIf="selectedNavbar==2">
+        <app-lookingforblood></app-lookingforblood>
+    </div>
+    <div *ngIf="selectedNavbar==3">
+        <app-wanttodonateblood></app-wanttodonateblood>
+    </div>
+    <div *ngIf="selectedNavbar==4">
+        <app-donor-history></app-donor-history>
+    </div>

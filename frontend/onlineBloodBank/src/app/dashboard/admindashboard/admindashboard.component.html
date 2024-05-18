@@ -1,0 +1,86 @@
+<h1>Welcome Admin</h1>
+
+<nav>
+    <button (click)="getAllDonor()" [disabled]="show==1">Donors</button>
+    <button (click)="reqOfBlood()" [disabled]="show==2">RequestOfBlood</button>
+    <button (click)="getAllAppointment()" [disabled]="show==3">Appointments</button>
+    <button (click)="logout()">logout</button>
+</nav>
+<div *ngIf="show==1">
+    <table border="1px solid black">
+        <tr>
+            <th>sr.no</th>
+            <th>Name</th>
+            <th>bloood type</th>
+            <th>Age</th>
+            <th>mobile number</th>
+            <th>gender</th>
+            <th>Address</th>
+            <th>Action</th>
+           
+        </tr>
+        <tr *ngFor="let donor of user;let i=index">
+            <td>{{i+1}}</td>
+            <td>{{donor.fullname}}</td>
+            <td>{{donor.bloodgroup}}</td>
+            <td>{{donor.age}}</td>
+            <td>{{donor.mobilenumber}}</td>
+            <td>{{donor.gender}}</td>
+            <td>{{donor.address}}</td>
+            <td>
+                <button>View Profile</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div *ngIf="show==2" >
+    <app-requestsofblood></app-requestsofblood>
+</div>
+
+
+<div *ngIf="show==3" class="appoint">
+    <h2>Appointments Of Donor</h2>
+
+<div>
+    <h2 style="text-align: center;">Appointments of Blood Donation </h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Blood Type</th>
+                <th>Preferred Date</th>
+                <th>Health Conditions</th>
+                <th>message</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Sample data -->
+            <tr *ngFor="let ap of appointmentdata;let i=index">
+                <td>{{i+1}}</td>
+                <td>{{ap.fullName}}</td>
+                <td>{{ap.email}}</td>
+                <td>{{ap.phone}}</td>
+                <td>{{ap.bloodType}}</td>
+                <td>{{ap.preferredDate |date}}</td>
+                <td>{{ap.healthConditions}}</td>
+                <td>{{ap.status}}</td>
+                <td>
+                    <button (click)="sendDataToBackend(ap)" [disabled]="ap.status=='confirm'" >confirm</button>
+                    <button [disabled]="ap.status=='pending'" (click)="showActionForm(ap.id)">Action</button></td>
+            </tr>
+            
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+</div>
+</div>
+
+<div *ngIf="show==4">
+    <app-action-form></app-action-form>
+</div>
+

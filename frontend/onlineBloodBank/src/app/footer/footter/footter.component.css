@@ -1,0 +1,57 @@
+Style the footer container
+.blood-donation-footer {
+    background-color: #D9534F; /* Red background color */
+    color: white; /* White text color */
+    padding: 20px 0;
+}
+
+/* Center the content within the footer */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Style the footer logo */
+.footer-logo img {
+    width: 100px;
+    border-radius: 75px; /* Adjust the width as needed */
+}
+
+/* Style the footer information */
+.footer-info {
+    text-align: center;
+}
+
+.footer-info h4 {
+    font-size: 18px;
+}
+
+.footer-info p {
+    font-size: 14px;
+}
+
+/* Style social icons (assuming you're using Font Awesome) */
+.social-icons a {
+    width: 30px; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 10px; /* Adjust the spacing as needed */
+ 
+   
+
+}
+
+/* Hover effect on social icons (optional) */
+.social-icons a:hover {
+    opacity: 0.8;
+}
+
+footer {
+    background-color: #333; /* Choose your preferred background color */
+    color: #fff; /* Choose your preferred text color */
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }

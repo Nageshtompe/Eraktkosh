@@ -1,0 +1,55 @@
+<!-- <form action="" #myForm="ngForm">
+    <div class="container">
+        <h1>User Login</h1>
+    UserName <br>
+    <input type="text" placeholder="enter Username" [(ngModel)]="UIUsername" [(ngModel)]="formData.name" required> <br>
+    Password  <br>
+    <input type="password" placeholder="enter password" [(ngModel)]="UIPassword"> <br>
+     <br>
+    
+    <button (click)="login()">LOGIN</button>
+    </div>
+</form> -->
+<form #myForm="ngForm">
+    <div class="container">
+      <h1>Login</h1>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          name="username" 
+          [(ngModel)]="UIUsername"
+          #username="ngModel" 
+          required
+          minlength="3"
+          maxlength="30"
+        >
+        <div class="error-messages" *ngIf="username.invalid && (username.dirty || username.touched)">
+          <div *ngIf="['username.errors.required']">Username is required.</div>
+          <div *ngIf="['username.errors.minlength']">At least 3 characters long.</div>
+          <div *ngIf="['username.errors.maxlength']">At most 30 characters long.</div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          [(ngModel)]="UIPassword"
+          #password="ngModel" 
+          required
+          minlength="5"
+        >
+        <div class="error-messages" *ngIf="password.invalid && (password.dirty || password.touched)">
+          <div *ngIf="['password.errors.required']">Password is required.</div>
+          <div *ngIf="['password.errors.minlength']"> At least 6 characters long.</div>
+        </div>
+      </div>
+      
+      <button (click)="login()" [disabled]="myForm.invalid">LOGIN</button> <!-- Disable button if form is invalid -->
+    </div>
+  </form>
+  

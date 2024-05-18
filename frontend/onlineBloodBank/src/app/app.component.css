@@ -1,0 +1,167 @@
+
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    color: #f10e0e;
+}
+button {
+    
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff0055;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    /* background-color: #0056b3; */
+    background-color: #ff0055;
+}
+
+.container {
+    
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+nav {
+    background-color: #333; /* Background color for the navigation bar */
+    overflow: hidden;
+}
+
+/* Style for the navigation bar buttons */
+nav button {
+    background-color: #333; /* Background color for the buttons */
+    border: none;
+    color: white; /* Text color for the buttons */
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Hover effect for buttons */
+nav button:hover {
+    background-color: #f30909; /* Background color on hover */
+}
+        /* Style for the navigation bar */
+        .navbar {
+            /* border-radius: 10px; */
+            width: 97%;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333; /* Change the background color as needed */
+            color: #fff; /* Change text color as needed */
+            padding: 10px 20px;
+        }
+
+        /* Style for the logo */
+        .logo {
+            border-radius: 5px;
+            width: 50px; /* Adjust the logo width as needed */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        /* Style for the navigation buttons */
+        .nav-buttons {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .nav-button.selected {
+            color: #f4eaea;
+            background-color: #007bff; /* Change to your desired color */
+          }
+
+        .nav-buttons li {
+            margin-right: 20px; /* Adjust spacing between buttons */
+        }
+
+        .nav-buttons button {
+            background-color: #555; /* Button background color */
+            color: #fff; /* Button text color */
+            border: none;
+            margin: 2px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .title {
+            
+            background-color: #F2F2F2; /* Light gray background color */
+              
+              
+            font-size: 2.5rem; /* Adjust the font size as needed */
+            font-weight: bold;
+            color: #D60000; /* Red color, you can choose a different color */
+            text-align: center; /* Center-align the text */
+            margin: 20px 0; /* Add some spacing around the title */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add a subtle text shadow */
+          }
+
+     
+          
+/* ... (existing styles) */
+
+.nav-buttons {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around; /* Adjust as needed */
+    align-items: center;
+}
+
+.nav-buttons button {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    margin: 2px;
+    padding: 10px 15px; /* Adjust padding as needed */
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.nav-button.selected {
+    color: #f4eaea;
+    background-color: #007bff;
+}
+
+/* ... (existing styles) */
+
+/* Responsive layout */
+@media screen and (max-width: 600px) {
+    .nav-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-buttons button {
+        margin-bottom: 5px; /* Adjust spacing between buttons */
+    }
+}
+
+
+
+
+
+         
+        
+     

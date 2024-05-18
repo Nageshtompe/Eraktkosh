@@ -1,0 +1,154 @@
+<div>
+  <button (click)="onClick(1)" class="book-appointment">Book Appointment</button>
+<button (click)="onClick(2)" (click)="getAllAppointment()" class="check-status">Check Appointment Status</button>
+</div>
+
+<!-- blood-donation.component.html -->
+<div *ngIf="show==1" class="container">
+    <h1>Blood Donation Appointment</h1>
+    <!-- blood-donation.component.html -->
+<form [formGroup]="bloodDonationForm" (ngSubmit)="submitForm()">
+
+  <!-- {{bloodDonationForm.value | json }} -->
+    <!-- Personal Information -->
+    <div>
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" formControlName="fullName">
+      <div *ngIf="bloodDonationForm.get('fullName').invalid && (bloodDonationForm.get('fullName').dirty || bloodDonationForm.get('fullName').touched)">
+        <div *ngIf="bloodDonationForm.get('fullName').hasError('required')">Full Name is required.</div>
+      </div>
+    </div>
+  
+    <!-- Email -->
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" formControlName="email">
+      <div *ngIf="bloodDonationForm.get('email').invalid && (bloodDonationForm.get('email').dirty || bloodDonationForm.get('email').touched)">
+        <div *ngIf="bloodDonationForm.get('email').hasError('required')">Email is required.</div>
+        <div *ngIf="bloodDonationForm.get('email').hasError('email')">Please enter a valid email address.</div>
+      </div>
+    </div>
+  
+    <!-- Phone -->
+    <div>
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" formControlName="phone">
+      <div *ngIf="bloodDonationForm.get('phone').invalid && (bloodDonationForm.get('phone').dirty || bloodDonationForm.get('phone').touched)">
+        <div *ngIf="bloodDonationForm.get('phone').hasError('required')">Phone Number is required.</div>
+      </div>
+    </div>
+  
+    <!-- Blood Type -->
+    <div>
+      <label for="bloodType">Blood Type:</label>
+      <select id="bloodType" formControlName="bloodType">
+        <option value="">Select Blood Type</option>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+        <option value="None">None</option>
+      </select>
+      <div *ngIf="bloodDonationForm.get('bloodType').invalid && (bloodDonationForm.get('bloodType').dirty || bloodDonationForm.get('bloodType').touched)">
+        <div *ngIf="bloodDonationForm.get('bloodType').hasError('required')">Blood Type is required.</div>
+      </div>
+    </div>
+  
+    <!-- Preferred Date -->
+    <div>
+      <label for="preferredDate">Preferred Date:</label>
+      <input type="date" id="preferredDate" formControlName="preferredDate">
+      <div *ngIf="bloodDonationForm.get('preferredDate').invalid && (bloodDonationForm.get('preferredDate').dirty || bloodDonationForm.get('preferredDate').touched)">
+        <div *ngIf="bloodDonationForm.get('preferredDate').hasError('required')">Preferred Date is required.</div>
+      </div>
+    </div>
+  
+    <!-- Additional Information -->
+    <div>
+      <label for="healthConditions">Any Health Conditions:</label>
+      <textarea id="healthConditions" formControlName="healthConditions" rows="4"></textarea>
+    </div>
+  
+    <!-- Submit Button -->
+    <button  type="submit" [disabled]="!bloodDonationForm.valid">Book Appointment</button>
+  </form>
+  
+  </div>
+
+  <div *ngIf="show==2">
+  
+    <h2>Appointment Status</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Blood Type</th>
+          <th>Preferred Date</th>
+          <th>Health Conditions</th>
+          <th>Status</th>
+          <th>Action</th> <!-- New column for the Cancel button -->
+        </tr>
+      </thead>
+      <tbody>
+        <!-- You can add your data dynamically here -->
+        <tr *ngFor="let req of appointment;let i=index">
+          <td>{{i+1}}</td>
+          <td>{{req.fullName}}</td>
+          <td>{{req.email}}</td>
+          <td>{{req.phone}}</td>
+          <td>{{req.bloodType}}</td>
+          <td>{{req.preferredDate |date}}</td>
+          <td>{{req.healthConditions}}</td>
+          <td>{{req.status}}</td>
+          <td><button class="cancel-button" (click)="cancelAppointment(req)">Cancel</button></td>
+        </tr>
+        <!-- Add more rows as needed -->
+      </tbody>
+    </table>
+  </div>
+  
+  <div *ngIf="show==2">
+    <h2>Appointment Confirmed </h2>
+    <button (click)="getConfirmAppointment()">refresh</button>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Blood Type</th>
+          <th>Preferred Date</th>
+          <th>Health Conditions</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- You can add your data dynamically here -->
+        <tr *ngFor="let confirm of confirmAppointment;let i=index">
+          <td>{{i+1}}</td>
+          <td>{{confirm.fullName}}</td>
+          <td>{{confirm.email}}</td>
+          <td>{{confirm.phone}}</td>
+          <td>{{confirm.bloodType}}</td>
+          <td>{{confirm.preferredDate |date}}</td>
+          <td>{{confirm.healthConditions}}</td>
+          <td>{{confirm.status}}</td>
+        </tr>
+        <!-- Add more rows as needed -->
+      </tbody>
+    </table>
+
+
+
+  </div>
+  

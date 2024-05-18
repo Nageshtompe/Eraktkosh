@@ -1,0 +1,139 @@
+<button (click)="show(1)">
+   REQUEST FOR BLOOD
+</button><button (click)="show(2)"(click)="statusOfBloodRequest()" >
+    STATUS OF BLOOD REQUEST
+</button>
+
+
+<div *ngIf="bloodRequestForm == 1">
+    <h1>Blood Request Form</h1>
+    <form [formGroup]="formData" (ngSubmit)="saveBloodRequestData()">
+      <fieldset>
+        <legend>Patient Information</legend>
+        <label for="patientName">Patient Name:</label>
+        <input type="text" formControlName="patientName" required>
+        <div *ngIf="formData.get('patientName')?.invalid && formData.get('patientName')?.touched">
+          <div *ngIf="formData.get('patientName')?.hasError('required')">Patient Name is required.</div>
+        </div><br><br>
+  
+        <label for="patientAge">Patient Age:</label>
+        <input type="number" formControlName="patientAge" required>
+        <div *ngIf="formData.get('patientAge')?.invalid && formData.get('patientAge')?.touched">
+          <div *ngIf="formData.get('patientAge')?.hasError('required')">Patient Age is required.</div>
+          <div *ngIf="formData.get('patientAge')?.hasError('negative')">Age cannot be a negative value.</div>
+        </div><br><br>
+  
+        <label for="patientGender">Patient Gender:</label>
+        <div>
+          <input type="radio" formControlName="patientGender" value="Male" required> Male
+          <input type="radio" formControlName="patientGender" value="Female" required> Female
+          <input type="radio" formControlName="patientGender" value="Other" required> Other
+        </div>
+        <div *ngIf="formData.get('patientGender')?.invalid && formData.get('patient_gender')?.touched">
+          <div *ngIf="formData.get('patientGender')?.hasError('required')">Please select Patient Gender.</div>
+        </div><br><br>
+    </fieldset>
+    <fieldset>
+
+        <legend>Hospital or Clinic Information</legend>
+      <label for="hospitalName">Hospital/Clinic Name:</label>
+      <input type="text" formControlName="hospitalName">
+      <div *ngIf="formData.get('hospitalName')?.invalid && formData.get('hospitalName')?.touched">
+        <div *ngIf="formData.get('hospitalName')?.hasError('required')">Hospital/Clinic Name is required.</div>
+      </div><br><br>
+      <label for="hospitalContactNumber">Hospital Contact Number:</label>
+      <input type="tel" formControlName="hospitalContactNumber">
+      <div *ngIf="formData.get('hospitalContactNumber')?.hasError('required') && formData.get('hospitalContactNumber')?.touched">
+        <div>Hospital Contact Number is required.</div>
+      </div>
+      <div *ngIf="formData.get('hospitalContactNumber')?.hasError('pattern') && formData.get('hospitalContactNumber')?.touched">
+        <div>Hospital Contact Number must be a 10-digit number.</div>
+      </div><br><br>
+      </fieldset>
+      <fieldset>
+        <legend>Blood Type and Quantity</legend>
+        <label for="bloodType">Blood Type:</label>
+        <select formControlName="bloodType">
+          <option value="A+">A+</option>
+          <option value="B+">B+</option>
+          <option value="O+">O+</option>
+          <option value="AB+">AB+</option>
+          <option value="A-">A-</option>
+          <option value="B-">B-</option>
+          <option value="O-">O-</option>
+          <option value="AB-">AB-</option>
+        </select>
+        <div *ngIf="formData.get('bloodType')?.invalid && formData.get('bloodType')?.touched">
+          <div *ngIf="formData.get('bloodType')?.hasError('required')">Blood Type is required.</div>
+        </div><br><br>
+  
+        <!-- Add similar sections for other form fields -->
+  
+      </fieldset>
+      <fieldset>
+        <legend>Date Needed</legend>
+        <label for="neededDate">Date Needed:</label>
+        <input type="date" formControlName="neededDate">
+        <div *ngIf="formData.get('neededDate')?.invalid && formData.get('neededDate')?.touched">
+          <div *ngIf="formData.get('neededDate')?.hasError('required')">Date Needed is required.</div>
+          <div *ngIf="formData.get('neededDate')?.hasError('invalidDate')">Date must not be older than today.</div>
+        </div><br><br>
+      </fieldset>
+      
+      <fieldset>
+        <legend>Emergency Status</legend>
+        <div>
+          <input type="radio" formControlName="emergencyStatus" value="Emergency" required> Emergency
+          <input type="radio" formControlName="emergencyStatus" value="Non-Emergency" required> Non-Emergency
+        </div>
+        <div *ngIf="formData.get('emergencyStatus')?.invalid && formData.get('emergencyStatus')?.touched">
+          <div *ngIf="formData.get('emergencyStatus')?.hasError('required')">Please select Emergency Status.</div>
+        </div><br><br>
+      </fieldset>
+      <fieldset>
+        <legend>Contact Information</legend>
+        <label for="patientContactNumber">Contact Number:</label>
+        <input type="tel" formControlName="patientContactNumber">
+        <div *ngIf="formData.get('patientContactNumber')?.invalid && formData.get('patientContactNumber')?.touched">
+          <div *ngIf="formData.get('patientContactNumber')?.hasError('required')">Contact Number is required.</div>
+          <div *ngIf="formData.get('patientContactNumber')?.hasError('pattern')">Contact Number must be a 10-digit number.</div>
+        </div><br><br>
+      </fieldset>
+      
+
+      
+
+      
+  
+      <!-- Add similar sections for other form fields -->
+  
+      <button type="submit" [disabled]="formData.invalid">Submit Request</button>
+    </form>
+  </div>
+  
+
+<div *ngIf="bloodRequestForm==2">
+    <table border="1 px solid black">
+        <tr>
+            <th>sr.no</th>
+            <th>requested date</th>
+            <th>patient_name</th>
+            <th>blood type</th>
+            <th>status</th>
+            <th>message</th>
+            
+
+        </tr>
+        <tr *ngFor="let request of statusOfBlood;let i=index">
+            <td>{{i+1}}</td>
+            <td>{{request.dateOfRequest}}</td>
+            <td>{{request.patientName}}</td>
+            <td >{{request.bloodType}}</td>
+            <td *ngIf="request.statusOfBloodRequested==1">pending</td>
+            <td *ngIf="request.statusOfBloodRequested==2">completed</td>
+            <td *ngIf="request.statusOfBloodRequested==3">rejected</td>
+            <td>{{request.requestedBloodResponse}}</td>
+        </tr>
+    </table>
+</div>
+
